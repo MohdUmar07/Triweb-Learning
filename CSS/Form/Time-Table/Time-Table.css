@@ -1,0 +1,26 @@
+
+body{
+	
+	background-color:#35b0ab;
+
+	}
+table, th, td {
+  font-size: large;
+  border: 2px solid;
+  font-style: italic;
+  font-family: cursive;
+}
+table {
+  	
+  	background-image: linear-gradient(to top right, #3d6cb9, #00fff0); 
+    	
+}
+
+h1{
+	font-style: large;
+	font-family: Sans-serif;
+	border-bottom: ridge;
+	width: 30%;
+	border-color: gray;
+
+}
