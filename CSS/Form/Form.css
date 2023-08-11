@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+
+	<style type="text/css">
+
+		body{
+			
+			background-image: linear-gradient(to top right, #3d6cb9, #00fff0);
+
+		}
+
+		
+
+		h1{
+			width: 330px;
+			font-style: italic;
+		}
+
+				
+		*{
+
+			border-radius: 20px;
+			
+		}
+		form{
+
+			font-family: times;
+			font-size: large;
+			background-color: #35b0ab;
+			border-width: 5px;
+			align-content: center;
+			width: 350px;
+			height: 480px;
+
+
+		}
+
+		#submit{
+			width: 120px;
+			height: 30px;
+
+		}
+		
+
+	</style>
+
+</head>
+<body >
+	<center><h1>Registration Form<br>TriWeb-Learning</h1>
+<border>
+	<form><br>
+		<label for = "First Name">First Name :</label>
+		<input type="text" id="FirstName" >
+
+		<br><br>
+
+		<label for = "Last Name">Last Name :</label>
+		<input type="text" id="LastName" >
+
+		<br><br>
+
+		<label for = "Email">Email :</label>
+		<input type="Email" id="Email" >
+
+		<br><br>
+
+		<label for = "Contact">Contact :</label>
+		<input type="tel" id="Contact" >
+
+		<br><br>
+
+		<label for="dob">Date of Birth :</label>
+		<input type="date" id="dob" oninput="age.value = new Date().getFullYear() - new Date(this.value).getFullYear()">
+
+		<br><br>
+
+ 		<label for="age">Age:</label>
+   		<input type="text" id="age" readonly>
+   		
+   		<br><br>
+
+   		<label for="Gender">Gender :</label>
+   		<input type="radio" id="Male" name="Gender" value="Male">Male
+   		<input type="radio" id="Female" name="Gender" value="Female">Female
+   		<input type="radio" id="Other" name="Gender" value="Other">Other
+   		
+   		<br><br>
+   		
+   		<label for="resumeFile">Resume: </label>
+        <input type="file" id="resumeFile" name="resume">
+
+        <br><br><br><br>
+
+        <input type="submit" id="submit">
+	</form>
+</border>
+</body>
+</html>
