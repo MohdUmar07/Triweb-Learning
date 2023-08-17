@@ -1,0 +1,23 @@
+Day 3----------
+
+Loop---
+- Problem without loop
+- Solution with loop
+- For loop
+- while loop
+- do while
+- diff in while and do while
+- labelled statement
+- break statement with single loop
+- continue statment with single loop
+- nested loop
+- outer loop
+- inner loop
+- program to under stand nested loop
+- break statement in inner loop
+- break statement in outer loop
+- continue statement in inner loop
+- continue statement in outer loop
+- For in loop
+- for of loop
+- foreach loop only for array

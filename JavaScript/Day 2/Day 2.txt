@@ -1,0 +1,28 @@
+Day 2 .......................
+
+- How to run JS program in system using Node
+- How to open VScode using "code ."
+- Using VScode for JS
+- A function to vlidate user, using if...else
+- Data types
+- Datatype converversion
+- parseInt
+- String  + number -> Concatination
+- number + String -> Concatination
+- Convert Using + operator
+- use parsInt with base
+- literals
+- handling special keys of object
+
+
+Controle flow and error handling--------
+ - Block Statment
+ - Conditional Statment 
+ - switch case and break
+ - switch case and multiple statment with one break
+ - Exception handling
+ - try...catch
+ - throw custom error
+ - finally Block
+ - return from finally will overwrite the return statment of try      and catch 
+
