@@ -1,0 +1,13 @@
+Day 4---
+
+Functions
+- Difining functions 
+- Functions declaration
+- functions expression
+- define function on the basis of condition 
+- calling function
+- Recursion -- factorial function using recursion
+- function hoisting
+- nested function
+- recursion and methods of recursion
+- take user input
