@@ -5,7 +5,19 @@
 -. nodemon -- Start -- done
 
 -. multi layer - Controllers, Models, Routers
--. Tanspile, taranspiler, transcompiler
+-. configuration - enviroment variable -> local server
+
 
 -. TypeScript
--. configuration - enviroment variable -> local server
+    - install Typescript
+    - tsc -> type script comppiler
+    - move all source code(.js) files to src or create your files here
+    - extension is .ts
+    - definations for node, express and other libreries
+        -- npm install --save-dev @type/node
+        -- yarn add --dev @type@node
+        
+    - moduleResolution = node10
+
+-. Tanspile, taranspiler, transcompiler
+

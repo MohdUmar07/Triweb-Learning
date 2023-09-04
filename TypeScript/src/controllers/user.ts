@@ -1,6 +1,8 @@
-const {addUserToDB} = require('../models/user')
+import {Request, Response} from 'express';
 
-const registerUser = (req, res)=>{
+import {addUserToDB} from '../models/user';
+
+const registerUser = (req:Request, res:Response)=>{
     // fetch data from req
     // validation 
     // normalize
@@ -14,4 +16,4 @@ const registerUser = (req, res)=>{
     // task and code
 }
 
-module.exports = {registerUser};
+export {registerUser};
