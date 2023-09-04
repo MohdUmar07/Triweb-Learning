@@ -5,7 +5,7 @@
 -. nodemon -- Start -- done
 
 -. multi layer - Controllers, Models, Routers
--. TypeScript
-
 -. Tanspile, taranspiler, transcompiler
+
+-. TypeScript
 -. configuration - enviroment variable -> local server

@@ -1,5 +1,5 @@
 {
-  "name": "NodeBasicProject",
+  "name": "userservice",
   "version": "1.0.0",
   "description": "This project contains NodeJS REST APIs",
   "main": "app.js",
