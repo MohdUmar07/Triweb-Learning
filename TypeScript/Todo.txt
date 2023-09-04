@@ -1,0 +1,11 @@
+-. Setup project - Start
+-. yarn ------- Done
+-. NodeJS --- Start
+-. express --- Start
+-. nodemon -- Start -- done
+
+-. multi layer - Controllers, Models, Routers
+-. TypeScript
+
+-. Tanspile, taranspiler, transcompiler
+-. configuration - enviroment variable -> local server
