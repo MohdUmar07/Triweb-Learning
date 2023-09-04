@@ -5,4 +5,5 @@ const express = require('express');
 const user_1 = require("../controllers/user");
 const router = express.Router();
 router.post('/register', user_1.registerUser);
+router.post('/update', user_1.checkTypesAndInterface);
 exports.default = router;

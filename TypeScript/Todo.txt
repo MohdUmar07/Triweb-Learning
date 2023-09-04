@@ -21,3 +21,7 @@
 
 -. Tanspile, taranspiler, transcompiler
 
+
+-. Argument of type 'number' is not assignable to parameter of type 'string'.
+
+
