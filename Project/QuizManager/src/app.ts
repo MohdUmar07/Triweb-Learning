@@ -6,7 +6,7 @@ import  mongoose  from 'mongoose';
 
 
 const app = express();
-const connectionString = "mongodb+srv://myuser:abcd1234@mycluster.jkyhiwt.mongodb.net/workshopDb?retryWrites=true&w=majority"
+const connectionString = process.env.CONNECTION_STRING || "";
 
 app.use(express.json())
 
@@ -22,7 +22,7 @@ async function startServer() {
 
 try{
     await mongoose.connect(connectionString);
-    app.listen(3002, ()=>{
+    app.listen(process.env.PORT, ()=>{
         console.log("Server connect with Database ");
         
     });

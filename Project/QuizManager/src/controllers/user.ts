@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
+import bcrypt from 'bcryptjs'
+
 import User from "../models/user";
 
 
@@ -15,7 +17,24 @@ const registerUser = async (req: Request, res: Response, next: NextFunction) => 
 
     let resp: ReturnResponse;
     try {
-        const user = new User(req.body);
+
+        // --> how to decode base64 <-- //
+        // const name = req.body.name;
+        // const email = req.body.email;
+        // const passwordFromReq = req.body.password;
+
+        // let data = 'stackbash.com';
+        // let buff = Buffer.from(passwordFromReq);
+        // let password = buff.toString('base64');
+        // const user = new User({name,email,password});
+
+        const name = req.body.name;
+        const email = req.body.email;
+        let password = await bcrypt.hash(req.body.password,12);
+
+
+
+        const user = new User({name,email,password});
         const result = await user.save();
         if (!result) {
             resp = { status: "error", message: "No result found", data: {} }
@@ -39,6 +58,9 @@ const getUser = async (req: Request, res: Response) => {
     // console.log("query",req.query);
     // console.log("params", req.params.userId);
     // res.send("Done!")
+    console.log("Changes are changed");
+
+
     let resp: ReturnResponse;
     try {
         const userId = req.params.userId;
@@ -73,7 +95,7 @@ const updateUser = async (req: Request, res: Response,) => {
     //     res.send(resp);
     // } catch (error) {
     //     console.log(error);
-   
+
 
     // }
 
@@ -86,12 +108,12 @@ const updateUser = async (req: Request, res: Response,) => {
             resp = { status: "error", message: " No user found ", data: {} };
             res.send(resp);
 
-        } else{
-        user.name = req.body.name;
-        await user.save();
+        } else {
+            user.name = req.body.name;
+            await user.save();
 
-        resp = { status: "success", message: "User updated", data: {} };
-        res.send(resp);
+            resp = { status: "success", message: "User updated", data: {} };
+            res.send(resp);
         }
 
     } catch (error) {
