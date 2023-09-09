@@ -18,16 +18,16 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const app = (0, express_1.default)();
 const connectionString = "mongodb+srv://myuser:abcd1234@mycluster.jkyhiwt.mongodb.net/workshopDb?retryWrites=true&w=majority";
 app.use(express_1.default.json());
-app.get('/', (req, res) => {
-    res.send("Hi Hello");
-});
+// app.get('/',(req,res)=>{
+//     res.send("Hi Hello");
+// })
 app.use('/user', user_1.default);
 function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield mongoose_1.default.connect(connectionString);
             app.listen(3002, () => {
-                console.log("Server connect at port 3002 ");
+                console.log("Server connect with Database ");
             });
         }
         catch (error) {

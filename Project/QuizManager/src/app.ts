@@ -10,10 +10,10 @@ const connectionString = "mongodb+srv://myuser:abcd1234@mycluster.jkyhiwt.mongod
 
 app.use(express.json())
 
-app.get('/',(req,res)=>{
-    res.send("Hi Hello");
+// app.get('/',(req,res)=>{
+//     res.send("Hi Hello");
    
-})
+// })
 
 app.use('/user', userRoutes)
 
@@ -23,7 +23,7 @@ async function startServer() {
 try{
     await mongoose.connect(connectionString);
     app.listen(3002, ()=>{
-        console.log("Server connect at port 3002 ");
+        console.log("Server connect with Database ");
         
     });
 
