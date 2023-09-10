@@ -1,8 +1,8 @@
 import express from 'express';
-
+import  mongoose  from 'mongoose';
 
 import userRoutes from './routes/user';
-import  mongoose  from 'mongoose';
+import authRoutes from './routes/auth';
 
 
 const app = express();
@@ -15,7 +15,8 @@ app.use(express.json())
    
 // })
 
-app.use('/user', userRoutes)
+app.use('/user', userRoutes);
+app.use('/auth', authRoutes);
 
 async function startServer() {
     
