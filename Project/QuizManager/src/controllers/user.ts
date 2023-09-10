@@ -23,8 +23,16 @@ const getUser = async (req: Request, res: Response) => {
 
 
     let resp: ReturnResponse;
+    console.log(req.userId);
+    
     try {
         const userId = req.params.userId;
+
+        if(req.userId != req.params.userId){
+            const err = new Error (" You are not allowed")
+            throw err;
+        }   
+
         const user = await User.findById(userId, { name: 1, email: 1 });
         if (!user) {
             resp = { status: "error", message: " No user found ", data: {} };
@@ -61,6 +69,12 @@ const updateUser = async (req: Request, res: Response,) => {
     // }
 
     try {
+
+        
+        if(req.userId != req.body._id){
+            const err = new Error ("You are not allowed")
+            throw err;
+        }   
 
         const userId = req.body._id;
         const user = await User.findById(userId);
