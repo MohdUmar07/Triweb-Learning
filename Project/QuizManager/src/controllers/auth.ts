@@ -2,13 +2,14 @@ import { Request, Response, NextFunction } from "express";
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import User from "../models/user";
+import ProjectError from "../helper/error";
 
 
 
 interface ReturnResponse {
     status: "success" | "error",
     message: String,
-    data: {}
+    data: {} | [];
 }
 
 const registerUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -43,13 +44,11 @@ const registerUser = async (req: Request, res: Response, next: NextFunction) => 
             res.send(resp)
         }
     } catch (error) {
-        resp = { status: "error", message: "Something went wrong", data: {} };
-        res.status(420).send(resp);
-        // console.log(error);
+        next(error);
     }
 };
 
-const loginUser = async (req: Request, res: Response,) => {
+const loginUser = async (req: Request, res: Response, next: NextFunction) => {
 
     let resp: ReturnResponse;
     try {
@@ -59,8 +58,9 @@ const loginUser = async (req: Request, res: Response,) => {
         // find user with email -- 
         const user = await User.findOne({ email });
         if (!user) {
-            resp = { status: "error", message: "User not found", data: {} };
-            res.send(resp);
+            const err = new ProjectError("User not found")
+            err.statusCode = 401;
+            throw err;
         } else {
 
             // verfy password using bcrypt
@@ -69,21 +69,21 @@ const loginUser = async (req: Request, res: Response,) => {
             // than decide0
             if (status) {
 
-                const  token = jwt.sign({userId:user._id},  "thisismyveryveryimportantsecretkey",{expiresIn: "1h"});
+                const token = jwt.sign({ userId: user._id }, "thisismyveryveryimportantsecretkey", { expiresIn: "1h" });
 
-                resp = { status: "success", message: "Logged in", data: {token} };
+                resp = { status: "success", message: "Logged in", data: { token } };
                 res.send(resp);
             } else {
-                resp = { status: "error", message: "User and password is incorrect", data: {} };
-                res.send(resp);
+
+                const err = new ProjectError("User and password is incorrect")
+                err.statusCode = 401;
+                throw err;
             }
 
         }
 
     } catch (error) {
-        resp = { status: "error", message: "Something went wrong", data: {} };
-        res.status(420).send(resp);
-        console.log(error);
+        next(error);
     }
 
 }

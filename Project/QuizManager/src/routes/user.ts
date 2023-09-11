@@ -1,5 +1,5 @@
 import express from 'express';
-import {getUser, updateUser,  } from '../controllers/user';
+import { getUser, updateUser, } from '../controllers/user';
 import { isAuthenticated } from "../middleware/isAuth";
 
 const router = express.Router();
@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 // GET /user/:userId
-router.get('/:userId', isAuthenticated,getUser);
+router.get('/:userId', isAuthenticated, getUser);
 
 // PUT /user/
 router.put('/', isAuthenticated, updateUser);
