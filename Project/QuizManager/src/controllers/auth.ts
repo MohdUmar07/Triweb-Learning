@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import User from "../models/user";
 import ProjectError from "../helper/error";
+import { validationResult } from "express-validator/src/validation-result";
 
 
 
@@ -19,15 +20,14 @@ const registerUser = async (req: Request, res: Response, next: NextFunction) => 
     let resp: ReturnResponse;
     try {
 
-        // --> how to decode base64 <-- //
-        // const name = req.body.name;
-        // const email = req.body.email;
-        // const passwordFromReq = req.body.password;
-
-        // let data = 'stackbash.com';
-        // let buff = Buffer.from(passwordFromReq);
-        // let password = buff.toString('base64');
-        // const user = new User({name,email,password});
+        // validation
+        const validationError = validationResult(req);
+        if(!validationError.isEmpty()){
+            const err = new ProjectError("Validation failed");
+            err.statusCode = 422; 
+            err.data = validationError.array()
+            throw err;
+        }
 
         const name = req.body.name;
         const email = req.body.email;
@@ -88,4 +88,12 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
 
 }
 
-export { registerUser, loginUser };
+const isUserExist = async (email:String)=> {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return false;
+    }
+    return true;
+       
+} 
+export { registerUser, loginUser, isUserExist};
