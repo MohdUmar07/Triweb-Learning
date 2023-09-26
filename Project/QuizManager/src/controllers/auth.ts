@@ -3,16 +3,13 @@ import { RequestHandler } from "express";
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import User from "../models/user";
+import { ReturnResponse } from "../utils/interfaces";
 import ProjectError from "../helper/error";
 import { validationResult } from "express-validator/src/validation-result";
 
 
 
-interface ReturnResponse {
-    status: "success" | "error",
-    message: String,
-    data: {} | [];
-}
+
 
 
 const registerUser:RequestHandler = async (req, res, next ) => {

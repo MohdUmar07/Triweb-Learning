@@ -1,12 +1,9 @@
 import { RequestHandler } from "express";
 import User from "../models/user";
+import { ReturnResponse } from "../utils/interfaces";
 import ProjectError from "../helper/error";
 
-interface ReturnResponse {
-    status: "success" | "error",
-    message: String,
-    data: {} | [];
-}
+
 
 
 

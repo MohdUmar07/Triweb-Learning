@@ -3,13 +3,9 @@ import { RequestHandler } from "express";
 import { validationResult } from "express-validator";
 
 import Quiz from "../models/quiz";
+import { ReturnResponse } from "../utils/interfaces";
 import ProjectError from "../helper/error";
 
-interface ReturnResponse {
-  status: "success" | "error";
-  message: String;
-  data: {} | [];
-}
 
 const creatQuiz:RequestHandler = async (req, res, next ) => {
   try {

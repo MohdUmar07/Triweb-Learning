@@ -8,15 +8,12 @@ import ProjectError from './helper/error';
 import quizRoutes from './routes/quiz';
 import examRoute from './routes/exam';
 import reportRoute from './routes/report';
+import { ReturnResponse } from "./utils/interfaces";
 
 
 const app = express();
 
-interface ReturnResponse {
-    status: "success" | "error",
-    message: String,
-    data: {} | [];
-}
+
 
 const connectionString = process.env.CONNECTION_STRING || "";
 
