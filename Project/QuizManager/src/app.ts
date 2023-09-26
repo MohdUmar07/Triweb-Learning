@@ -5,6 +5,9 @@ import { Request, Response, NextFunction } from "express"
 import userRoutes from './routes/user';
 import authRoutes from './routes/auth';
 import ProjectError from './helper/error';
+import quizRoutes from './routes/quiz';
+import examRoute from './routes/exam';
+import reportRoute from './routes/report';
 
 
 const app = express();
@@ -35,6 +38,12 @@ declare global {
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 
+app.use('/quiz', quizRoutes);
+
+app.use('/exam', examRoute);
+
+app.use('/report', reportRoute);
+
 app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => {
     let message: String;
     let statusCode: number;
@@ -54,7 +63,7 @@ app.use((err: ProjectError, req: Request, res: Response, next: NextFunction) => 
         resp.data = err.data;
     }
 
-    console.error(err.statusCode, err.message); // Log the error
+    console.log(err.statusCode, err.message); // Log the error
 
     res.status(statusCode).send(resp);
 });

@@ -1,4 +1,5 @@
-import { Request, Response, NextFunction } from "express";
+// import { Request, Response, NextFunction } from "express";
+import { RequestHandler } from "express";
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import User from "../models/user";
@@ -13,7 +14,8 @@ interface ReturnResponse {
     data: {} | [];
 }
 
-const registerUser = async (req: Request, res: Response, next: NextFunction) => {
+
+const registerUser:RequestHandler = async (req, res, next ) => {
 
 
 
@@ -48,7 +50,7 @@ const registerUser = async (req: Request, res: Response, next: NextFunction) => 
     }
 };
 
-const loginUser = async (req: Request, res: Response, next: NextFunction) => {
+const loginUser:RequestHandler = async (req, res, next) => {
 
     let resp: ReturnResponse;
     try {
