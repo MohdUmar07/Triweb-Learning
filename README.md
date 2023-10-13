@@ -38,7 +38,8 @@ This repository is a learning repo that I created during my internship at TriWeb
   - 📂 **Projects**
     - Contains HTML, CSS and JavaScript basic projects. 
       - BasicJsProject - Created a project to demonstrate DOM manipulation. 
-      - QuizManager - Created a Quiz App. 
+      - QuizManager - Created a Quiz App.
+      - Tic-Tac-Toe - Created a  Tic-Tac-Toe Game.  
 
   - 📂 **MySQL**
     - Contains MySQL queries. 
