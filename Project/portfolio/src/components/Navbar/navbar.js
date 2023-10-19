@@ -13,9 +13,8 @@ const Navbar = () => {
         <div className='desktopMenu'>
             <Link className='desktopMenuListItem'>Home</Link>
             <Link className='desktopMenuListItem'>About</Link>
-            <Link className='desktopMenuListItem'>Resume</Link>
             <Link className='desktopMenuListItem'>Projects</Link>
-
+            <Link className='desktopMenuListItem'>Resume</Link>
 
         </div>
         <button className='desktopMenuBtn'>
