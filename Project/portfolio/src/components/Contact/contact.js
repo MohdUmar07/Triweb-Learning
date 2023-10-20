@@ -3,6 +3,7 @@ import './contact.css';
 
 import facebook from '../../assets/facebook.png';
 import insta from '../../assets/instagram.png';
+import linkedIn from '../../assets/linkedIn.png'
 import twitter from '../../assets/twitter.png';
 
 
@@ -18,9 +19,12 @@ const Contact = () => {
                 <textarea className='msg' name='message' rows='5' placeholder='Your Message' />
                 <button type='submit' value='Send' className='submitBtn'>Submit</button>
                 <div className='links'>
-                    <img src={facebook} alt='facebook' className='link'/>
-                    <img src={insta} alt='instagram' className='link'/>
                     <img src={twitter} alt='twitter' className='link'/>
+                    <img src={linkedIn} alt='linkedIn' className='link'/>
+                    <img src={insta} alt='instagram' className='link'/>
+                    <img src={facebook} alt='facebook' className='link'/>
+                   
+
                     
                     
                 </div>
